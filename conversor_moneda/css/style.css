@@ -1,0 +1,104 @@
+body{
+    background-color: #f0fdf2;
+    color: #007770;
+    font-family: 'Sora', sans-serif;
+}
+header{
+    display: flex;
+    column-gap: 60px;
+    width: 600px;
+    background-color: #d6fadc;
+    margin: 50px auto 0px auto;
+    padding: 20px 40px 20px 40px;
+    border: 4px double #007770;
+    border-radius: 30px 30px 0px 0px;
+}
+header img{
+    height: 70px;
+    margin-left: 50px;
+}
+h1{
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 18px;
+}
+main{
+    width: 600px;
+    margin: 0px auto 0px auto;
+    padding: 30px 40px 30px 40px;
+    background-color: #d6fadc;
+    border: 4px double #007770;
+    border-radius: 0px 0px 30px 30px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    padding-right: 10px;
+    text-align: right;
+    font-size: 18px;
+}
+label{
+    margin: 30px;
+}
+input{
+    display: inline;
+    font-family: 'Sora', sans-serif;    
+    border: 1px solid #007770;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 16px;
+}
+input[type="text"]{
+    background-repeat: no-repeat;
+    background-position: right;
+    padding: 8px;
+    height: 30px;
+    min-width: 280px;
+}
+input[type="submit"]{
+    background-color: #007770;
+    border: 1px solid #007770;
+    color: #d6fadc;
+    padding: 10px;
+}
+input[type="submit"]:hover{
+    background-color: #007770;
+    color: #ffffff;
+}
+/* IDs */
+#inputEuros input[type="text"]{
+    border-radius: 0px 10px 10px 0px;
+}
+#inputEuros{
+    background-color: #007770;
+    color: #d6fadc;
+    border-radius: 10px;
+}
+#euro{
+    background-image: url("../img/euro.png");
+}
+#dolar{
+    background-image: url("../img/dolar.png");
+}
+#libra{
+    background-image: url("../img/libra.png");
+}
+#peso{
+    background-image: url("../img/peso.png");
+}
+#yen{
+    background-image: url("../img/yen.png");
+}
+#yuan{
+    background-image: url("../img/yuan.png"); 
+}
+#error{
+    text-align: center;
+    color: red;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

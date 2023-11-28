@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;400;600&display=swap" rel="stylesheet">
+    <title>Conversor de moneda</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- CABECERA -->
+    <header>
+        <img src="./img/logo.png" alt="Logo conversor">
+        <h1>Conversor de moneda</h1>
+    </header>
+    <!-- FORMULARIO USUARIO -->
+    <main>
+        <form action="#" id="formConversion">
+            <div class="itemform" id="inputEuros">
+                <label for="euro">Cantidad en euros:</label>
+                <input type="text" name="euro" id="euro" required minlength="1"/>
+            </div>
+            <div class="itemform">
+                <label for="dolar">Conversión a dólares:</label>
+                <input type="text" name="dolar" id="dolar" value="" readonly/>
+            </div>
+            <div class="itemform">
+                <label for="libra">Conversión a libras:</label>
+                <input type="text" name="libra" id="libra" value="" readonly/>
+            </div>
+            <div class="itemform">
+                <label for="peso">Conversión a pesos:</label>
+                <input type="text" name="peso" id="peso" value="" readonly/>
+            </div>
+            <div class="itemform">
+                <label for="yen">Conversión a yenes:</label>
+                <input type="text" name="yen" id="yen" value="" readonly/>
+            </div>
+            <div class="itemform">
+                <label for="yuan">Conversión a yuanes:</label>
+                <input type="text" name="yuan" id="yuan" value="" readonly/>
+            </div>
+            <div class="itemform">
+                <label id="error"></label>
+                <input type="submit" value="CONVERTIR" id="convertir">
+            </div>
+        </form>
+    </main>
+    <!-- JAVASCRIPT -->
+    <script src="./js/app.js"></script>
+</body>
+</html>

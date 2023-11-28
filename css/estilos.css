@@ -25,8 +25,8 @@ input{
     display: inline;
     font-family: 'Poppins', sans-serif;
     width: 236px;
-    border: 1px solid #ced4da;
     padding: 10px;
+    border: 1px solid #ced4da;
     border-radius: 0px 5px 5px 0px;
     font-weight: 200;
     font-size: 18px;
@@ -54,4 +54,12 @@ select{
     padding: 10px;
     font-weight: 400;
     font-size: 18px;
+}
+#error{
+    text-align: center;
+    color: #fd0c49;
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

@@ -3,6 +3,7 @@
 var nick;
 var tamano;
 var email;
+var geolocalizacionTxt;
 
 function datosUsuario(nick,tamano, email){
     sessionStorage.setItem('nick',nick.value);

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Computer builder</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Computer builder</h1>
+        <p>Drag and drop your favourite devices to the shopping cart</p>
+    </header>
+    <!-- Main -->
+    <main>
+        <!-- Product selector left section-->
+        <div id="product-selector">
+            <!-- Micro family -->
+            <div class="family" id="family-micro">
+                <div class="family-header">
+                    <h2>-- Microprocessors --</h2>
+                </div>
+                <div class="family-products">
+                    <div class="micro product" draggable="true">
+                        <div class="product-img">
+                            <img src="./img/products/micro-intel.jpg" alt="Micro Intel" draggable="false">  <!-- Images not draggable individually, only the whole div -->
+                        </div>
+                        <div class="product-info">
+                            <p class="description">Intel Pentium Core i9-7940X</p>
+                            <p class="price">1367.10</p>
+                        </div>
+                    </div> 
+                    <div class="micro product" draggable="true">
+                        <div class="product-image">
+                            <img src="./img/products/micro-amd.jpg" alt="Micro AMD" draggable="false">
+                        </div>
+                        <div class="product-info">
+                            <p class="description">AMD Ryzen ThreadRipper 2920X</p>
+                            <p class="price">1152.50</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <!-- Video family -->
+            <div class="family" id="family-video">
+                <div class="family-header">
+                    <h2>-- Graphic cards-- </h2>
+                </div>
+                <div class="family-products">
+                    <div class="video product" draggable="true">
+                        <div class="product-img">
+                            <img src="./img/products/video-msi.jpg" alt="Video MSI" draggable="false">
+                        </div>
+                        <div class="product-info">
+                            <p class="description">MSI GeForce RTX 4090 SUPRIM 24G</p>
+                            <p class="price">2237.10</p>
+                        </div>
+                    </div> 
+                    <div class="video product" draggable="true">
+                        <div class="product-image">
+                            <img src="./img/products/video-asus.jpg" alt="Video Asus" draggable="false">
+                        </div>
+                        <div class="product-info">
+                            <p class="description">Asus ROG Strix GeForce RTX 4090 White OC</p>
+                            <p class="price">3171.59</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <!-- Case family -->
+            <div class="family" id="family-case">
+                <div class="family-header">
+                    <h2>-- PC cases --</h2>
+                </div>
+                <div class="family-products">
+                    <div class="case product" draggable="true">
+                        <div class="product-img">
+                            <img src="./img/products/case-xinko.jpg" alt="Case Xinko" draggable="false">
+                        </div>
+                        <div class="product-info">
+                            <p class="description">XINKO E-ATX PC Gaming Computer Case</p>
+                            <p class="price">2389.39</p>
+                        </div>
+                    </div> 
+                    <div class="case product" draggable="true">
+                        <div class="product-image">
+                            <img src="./img/products/case-cougar.jpg" alt="Case Cougar" draggable="false">
+                        </div>
+                        <div class="product-info">
+                            <p class="description">Cougar Gemini X Dual System PC Gaming Case</p>
+                            <p class="price">1023.52</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <!-- RAM family -->
+            <div class="family" id="family-ram">
+                <div class="family-header">
+                    <h2>-- RAM memories --</h2>
+                </div>
+                <div class="family-products">
+                    <div class="ram product" draggable="true">
+                        <div class="product-img">
+                            <img src="./img/products/ram-proxmem.jpg" alt="RAM Proxmem" draggable="false">
+                        </div>
+                        <div class="product-info">
+                            <p class="description">PROXMEM Spear DDR5 RAM RGB 32 GB 6800 MT/s</p>
+                            <p class="price">519.27</p>
+                        </div>
+                    </div> 
+                    <div class="ram product" draggable="true">
+                        <div class="product-image">
+                            <img src="./img/products/ram-maxano.jpg" alt="RAM Maxano" draggable="false">
+                        </div>
+                        <div class="product-info">
+                            <p class="description">Maxano Memoria RAM DDR4 de 128 GB, 3200 MHz</p>
+                            <p class="price">1333.40</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <!-- Printer family -->
+            <div class="family" id="family-printer">
+                <div class="family-header">
+                    <h2>-- Printer devices --</h2>
+                </div>
+                <div class="family-products">
+                    <div class="printer product" draggable="true">
+                        <div class="product-img">
+                            <img src="./img/products/printer-epson.jpg" alt="Printer Epson" draggable="false">
+                        </div>
+                        <div class="product-info">
+                            <p class="description">Epson SureColor SC-T5100N</p>
+                            <p class="price">2380.80</p>
+                        </div>
+                    </div> 
+                    <div class="printer product" draggable="true">
+                        <div class="product-image">
+                            <img src="./img/products/printer-canon.jpg" alt="Printer Canon" draggable="false">
+                        </div>
+                        <div class="product-info">
+                            <p class="description">Canon ImagePROGRAF PRO-1000</p>
+                            <p class="price">1049.26</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <!-- Peripherals family -->
+            <div class="family" id="family-peripheral">
+                <div class="family-header">
+                    <h2>-- Peripherals --</h2>
+                </div>
+                <div class="family-products">
+                    <div class="peripheral product" draggable="true">
+                        <div class="product-img">
+                            <img src="./img/products/peripheral-logitech.jpg" alt="Peripheral Logitech" draggable="false">
+                        </div>
+                        <div class="product-info">
+                            <p class="description">Logitech Cordless Desktop MX 5500 Revolution</p>
+                            <p class="price">799.99</p>
+                        </div>
+                    </div> 
+                    <div class="peripheral product" draggable="true">
+                        <div class="product-image">
+                            <img src="./img/products/peripheral-corsair.jpg" alt="Peripheral Corsair" draggable="false">
+                        </div>
+                        <div class="product-info">
+                            <p class="description">Corsair Gaming K95 RGB Platinum LED</p>
+                            <p class="price">471.00</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <!-- Shopping cart right section -->
+        <div id="shopping-cart" draggable="false">
+            <div id="shopping-cart-header">
+                <h2>-- Shopping cart --</h2>                
+            </div>
+            <div id="cart-items">
+                <div id="empty-cart">
+                    <a href="index.html">Empty the shopping cart</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Total price calculation footer section -->
+    <footer>
+        <p>Total price: <span id="total-price">0.00</span></p>
+    </footer>
+    <!-- Javascript -->
+    <script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,112 +1,85 @@
-/*Elementos generales*/
 body{
     background-color: #ffffff;
+    color: #d10014;
     font-family: 'Caprasimo', serif;
+    font-size: 16px;
 }
 main{
     display: flex;
-    margin: 30px auto 0px auto;
-    width: 800px;
+    flex-direction: column;
+    margin: 20px auto 0px auto;
+    width: 850px;
 }
 form{
-    font-size: 18px;
     display: flex;
-    flex-direction: column;
-    row-gap: 20px;
+    flex-direction: row;
+    column-gap: 40px;
+    vertical-align: bottom;
+    background-color: #e5bc0d;
+    padding: 0px 20px 0px 20px;
 }
-label{
-    display: block;
-    margin-bottom: 10px;
+form img{
+    float: left;
+    width: 50px;
+    padding: 10px;
+    border-radius: 5px 0px 0px 5px;
 }
 input{
     display: inline;
     font-family: 'Caprasimo', serif;
-    width: 200px;
-    border: 1px solid #ced4da;
-    padding: 10px;
-    border-radius: 0px 5px 5px 0px;
-    font-weight: 200;
-    font-size: 18px;
+    font-size: 16px;
+    text-align: center;
+    width: 30px;
+    margin: 15px 0px 15px 10px;
+    padding: 7px;
 }
-select{
-    font-family: 'Caprasimo', serif;
-    width: 100%;
-    border: 1px solid #ced4da;
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: 200;
-    font-size: 18px;
-}
-input[type="submit"]{
-    background-color: #fd0c49;
-    color: #fff;
-    font-weight: 400;
-    border-radius: 5px;
-    width: 100%;
-}
-p{
-    font-weight: 100;
-    font-size: 14px;
-}
-footer{
-    font-weight: 100;
-}
-img{
-    float:left;
-    border: 1px solid #ced4da;
-    padding: 10px;
-    border-radius: 5px 0px 0px 5px;
-}
-/*Selectores Juego*/
-.inputJuego{
-    border-radius: 5px;
-    width: 230px;
-}
-.containerItem{
+/* Classes and IDs*/
+.card{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 75px;
-    min-height: 75px;
-    border-radius: 5px;
+    width: 120px;
+    height: 150px;
+    cursor: pointer;
+    background-color: #ffffff;
+    background-image: url("../img/card-bg.jpg");
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+    transition: background-image 1s;
 }
-.item{
-    border-radius: 45px;
-    border: solid 10px #fff;
-    width: 35px;
-    height: 35px;
+#nick{
+    width: 150px;
 }
-.rojo{
-    background-color: #fd0c49;
-    transition: background-color 0.4s;
-}
-.verde{
-    background-color: #7ac943;
-    transition: background-color 0.4s;
-}
-#contenedorJuego{
-    width: 500px;
+#gameBox{
+    width: 850px;
     margin-right: 10px;
 }
-#juego{
+#game{
     position: absolute;
     z-index: 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    min-height: 700px;
+    width: 850px;
     justify-items: center;
     align-items: center;
-    width: 500px;
-    min-height: 400px;
-    background-color: #fff;
-    border: 1px solid #ced4da;
-    border-radius: 5px 5px 0px 0px;
+    padding: 20px 0px 20px 0px;
+    background-image: url("../img/game-bg.jpg");
 }
-.juegoAcabadoColor{
-    background-color: #263238;
-    transition: background-color 0.4s;
+#gameTitle{
+    width: 850px;
+    background-color: #d10014;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+    text-align: center;
 }
-#juegoAcabado{
+#gameTitle p{
+    font-size: 24px;
+    line-height: 40px;
+}
+#gameEnd{
     z-index: 1;
     position: absolute;
     display: flex;
@@ -117,7 +90,7 @@ img{
     width: 500px;
     height: 400px; 
 }
-#juegoAcabado button{
+#gameEnd button{
     background-color: #fff;
     border: 1px solid #ced4da;
     padding-top: 10px;
@@ -127,22 +100,4 @@ img{
     font-weight: 400;
     border-radius: 5px;
     width: 200px;
-}
-#tituloJuego{
-    margin-top: 400px;
-    width: 500px;
-    background-color: #263238;
-    border: 1px solid #ced4da;
-    border-radius: 0px 0px 5px 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #fff;
-    text-align: center;
-}
-#tituloJuego p{
-    font-size: 24px;
-    font-weight: 400;
-}
-#contenedorUsuario{
-    width: 290px;
 }

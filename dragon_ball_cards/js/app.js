@@ -17,7 +17,7 @@ var avatarCont;
 /**
  * Comprueba los datos correctos del formulario de entrada
  */
-function comprobarForm(event){
+function checkForm(event){
     //Comprobar cambios
     if(nickInput.value.match(/(?<!\S)[0-9]/))
     {
@@ -47,6 +47,8 @@ function domLoaded(){
     cardsInput=document.getElementById("cards");
     formInput=document.getElementById("formInput");
 
+    formInput.addEventListener('submit',checkForm);
+    
     // Drag and drop events
     avatarItems=document.getElementsByClassName("avatarImgItem");
     for(let item of avatarItems){

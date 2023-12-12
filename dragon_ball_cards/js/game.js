@@ -9,6 +9,7 @@ var cardSetEasy = ["bulma", "buu", "cell", "frieza", "gohan", "goku", "krillin",
 var currentCardSet = []; 
 var firstCard = null;
 var secondCard = null;
+var idInterval;
 
 /**
  * Returns a random number between 0 and max
@@ -33,16 +34,49 @@ function shuffleArray(array){
     return array;
   }
 
+
+ /**
+ * Timer function
+ */
+function gameCountdown(){
+    let timeLeft = parseInt(document.getElementById("timer").value) - 1;
+    document.getElementById("timer").value = timeLeft;
+    switch(timeLeft){
+        case 0:
+            clearInterval(idInterval);
+            // End game
+            const cards = document.getElementsByClassName('card');
+            for (let card of cards) {
+                card.removeEventListener('click',flipCard);
+            }
+            window.alert("Has perdido!!!");
+            //Cambiar z-index paneles
+            /*document.getElementById("juegoAcabado").classList.add('juegoAcabadoColor');
+            document.getElementById("juegoAcabado").style.zIndex="2";
+            document.getElementById("juego").style.zIndex="1";
+            document.getElementById("nuevaPartida").addEventListener("click",(e)=>location.reload());*/
+            break;
+        case 10:
+            document.getElementById("timer").style.backgroundColor = "red";
+            document.getElementById("timer").style.color = "white";
+            break;
+    }
+}
+
 /**
- * Funcion que rellena nick y src de avatar
+ * Fills header data
  */
 function setHeaderInfo(){
     document.getElementById("nick").value = nick;
     document.getElementById("avatarImg").src = avatarImg;
     document.getElementById("level").value = level;
     document.getElementById("pairsLeft").value = parseInt(cards) / 2;
-    document.getElementById("timer").value = parseInt(cards) * 5;
+    document.getElementById("timer").value = parseInt(cards) * 2,5;   // Timer depends on number of cards
 }
+
+/**
+ * Initializes game area with a card set depending on the level
+ */
 
 function setCards(){
     document.getElementById("game").style.gridTemplateColumns="repeat("+ parseInt(cards) / 4 +", 1fr)";
@@ -97,20 +131,23 @@ function flipCard(event){
     if(firstCard == null){  // If there's no firstCard, it saves it
         firstCard = event.target;
         if (firstCard.style.backgroundImage == 'url("img/card-bg.jpg")'){        // Only flips the first card if it's not visible already
-            setTimeout(showCard(firstCard),1000);
+            showCard(firstCard);
         }
     }else{
         secondCard = event.target;
         if(secondCard.style.backgroundImage == 'url("img/card-bg.jpg")'){       // Only flips the second card if it's not visible already
-            setTimeout(showCard(secondCard),1000);
+           showCard(secondCard);
             if(firstCard.classList[firstCard.classList.length - 1] == secondCard.classList[firstCard.classList.length - 1]){   // If the pair of cards match (same class)
                 firstCard.removeEventListener('click',flipCard);    // The matching cards are not clickable anymore
                 secondCard.removeEventListener('click',flipCard);
                 document.getElementById("pairsLeft").value = document.getElementById("pairsLeft").value - 1;
+                if(document.getElementById("pairsLeft").value == 0){    // If all cards are matched, user wins
+                    window.alert("HAS GANADO!!!!");
+                }
             }
             else{
-                setTimeout(hideCard(firstCard),1000);     // If the pair of cards don't match (different class), hides them again
-                setTimeout(hideCard(secondCard),1000);
+                hideCard(firstCard);     // If the pair of cards don't match (different class), hides them again
+                hideCard(secondCard);
             }
             firstCard = null;   // After the second click, initializes first and second card
             secondCard = null;
@@ -119,6 +156,7 @@ function flipCard(event){
 }
 
 function startGame(){
+    idInterval=setInterval(gameCountdown,1000);   // Starts timer
     let cards = document.getElementsByClassName('card');
     for (let card of cards){
         card.addEventListener('click',flipCard);

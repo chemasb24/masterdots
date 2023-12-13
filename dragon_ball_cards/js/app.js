@@ -1,10 +1,10 @@
 /*
-* JS Para la comprobación de datos del Formulario de entrada
+* JS Checks input form data
 *
 * @author Chema Sánchez <csanchez@barnatic.es>
 */
 
-//Inicializacion de var,objetos, DOM
+// Variable initialization
 var nickInput;
 var levelInput;
 var cardsInput;
@@ -13,12 +13,12 @@ var avatarItems;
 var itemImg;
 var avatarCont;
 
-//Funciones de evento
+// Event functions
 /**
- * Comprueba los datos correctos del formulario de entrada
+ * Checks correct data in form input
  */
 function checkForm(event){
-    //Comprobar cambios
+    // Check input data
     if(nickInput.value.match(/(?<!\S)[0-9]/))
     {
         nickInput.focus();
@@ -26,7 +26,7 @@ function checkForm(event){
         error.innerText="Nickname can't start with a number";
         return false;
     }
-    //Informacion es correcta
+    // Data OK
     saveUserData(nickInput,levelInput,cardsInput,avatarCont);
     return true;
 }
@@ -52,11 +52,11 @@ function domLoaded(){
     // Drag and drop events
     avatarItems=document.getElementsByClassName("avatarImgItem");
     for(let item of avatarItems){
-        item.addEventListener('dragstart',movingImg)
+        item.addEventListener('dragstart',movingImg);
     }
     avatarCont=document.getElementById("avatarImg");
-    avatarCont.addEventListener('dragover',e=>{e.preventDefault()})
-    avatarCont.addEventListener('drop',changeImg)
+    avatarCont.addEventListener('dragover',e=>{e.preventDefault();});
+    avatarCont.addEventListener('drop',changeImg);
 }
 
 // Starts event loading

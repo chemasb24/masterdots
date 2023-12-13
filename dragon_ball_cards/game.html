@@ -13,13 +13,14 @@
 </head>
 <body>
     <main>
+        <!-- Header info -->
         <div id="gameInfo">
             <div id="gameTitle">
                 <p>DRAGON BALL - THE CARD MATCHING GAME</p>
             </div>
             <form id="formInput" action="juego.html">
                 <div class="itemform">
-                    <img src="./img/avatars/avatar1.png" id="avatarImg">
+                    <img src="./img/avatars/avatar1.png" id="avatarImg" alt="Avatar">
                     <input type="text" id="nick" value="nick" readonly>
                 </div>
                 <div class="itemform">
@@ -35,20 +36,30 @@
                     <input type="text" id="timer" value="60" readonly>
                 </div>
                 <div class="itemform">
-                    <a href="index.html"><img src="./img/exit.png" id="exit"></a>
+                    <a href="game.html"><img src="./img/restart.png" id="restart" alt="Play again"></a>
+                </div>
+                <div class="itemform">
+                    <a href="index.html"><img src="./img/exit.png" id="exit" alt="Exit"></a>                    
                 </div>
             </form>
         </div>
+        <!-- Game area -->
         <div id="gameBox">
-            <div id="game">
-                <!-- PINTAR EL PANEL DE JUEGO AUTOMA -->
-                <!-- <div class="cardContainer"><div class="card"></div></div> -->
+            <div id="game">                
             </div>
             <div id="gameEnd">
-                <button id="newGame">NEW GAME</button>
+                <div id="gameEndHeader">
+                    <h2 id="byeMessage">You won</h2>
+                    <p id="score">Games won in a row:</p>
+                </div>
+                <div id="gameEndButtons">
+                    <a href="game.html"><img src="./img/restart.png" id="playAgain" alt="Play again"></a>
+                    <a href="index.html"><img src="./img/exit.png" id="end" alt="End"></a>
+                </div>
             </div>
         </div>
     </main>
+    <!-- Javascript -->
     <script src="./js/userData.js"></script>
     <script src="./js/game.js"></script>
 </body>

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <!-- CABECERA -->
+    <!-- Header -->
     <header>
         <div id="header-logo">
             <img src="./img/logo.png" alt="Logo Masterdots">
@@ -21,16 +21,16 @@
             <h2>THE CARD MATCHING GAME</h2>
         </div>
     </header>
-    <!-- FORMULARIO USUARIO -->
+    <!-- User form -->
     <main>
-        <div>
-            <p id="error"></p>
-        </div>
         <form action="game.html" id="formInput">
             <div id="form-fields">
                 <div class="itemForm">
                     <label for="nick">Type your nickname</label>
-                    <input type="text" name="nick" id="nick" required minlength="2"/>
+                    <input type="text" name="nick" id="nick" required minlength="2">
+                </div>
+                <div>
+                    <p id="error"></p>
                 </div>
                 <div id="form-options">
                     <div class="itemForm">
@@ -104,8 +104,7 @@
             </div>
         </form>
     </main>
-    <!-- PIE DE PÁGINA-->
-    <!-- JAVASCRIPT -->
+    <!-- Javascript -->
     <script src="./js/userData.js"></script>
     <script src="./js/app.js"></script>
 </body>

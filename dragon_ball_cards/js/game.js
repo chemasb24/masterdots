@@ -1,6 +1,7 @@
 /*
 * JS DRAGON BALL CARD GAME
 *
+* @author Chema Sánchez <csanchez@barnatic.es>
 */
 // Global variables
 var cardSetHard = ["android17", "beerus", "bulma", "buu", "buu2", "buu3", "cell", "cell2", "chichi", "frieza", "frieza2", "frieza3", "frieza4", "gohan", "gohan2", "goku", "goku2", "goku3", "goku4", "gotenks", "kaio", "krillin", "krillin2", "krillin3", "pan", "pan2", "piccolo", "pilaf", "raditz", "roshi", "satan", "shinhan", "vegeta", "vegeta2", "vegeta3", "vegeta4", "yajirobe", "yamcha"];
@@ -13,8 +14,6 @@ var idInterval;
 
 /**
  * Returns a random number between 0 and max
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
- * @param  {} max
  */
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -22,7 +21,6 @@ function getRandomInt(max) {
 
 /**
  * Shuffles the received array and returns it
- * 
  */
 function shuffleArray(array){
     for (let i = array.length - 1; i > 0; i--) {
@@ -34,29 +32,38 @@ function shuffleArray(array){
     return array;
   }
 
+/**
+ * Shows end screen (true win / false lost)
+ */
+function showEndScreen(win){  
+    if(win){
+        document.getElementById("byeMessage").innerText = `Congratulations, ${sessionStorage.getItem('nick')}, you won!`;
+    }
+    else{
+        document.getElementById("byeMessage").innerText = `Bad luck, ${sessionStorage.getItem('nick')}, you lost`;
+    }
+    document.getElementById("score").innerText = `Games won in a row: ${sessionStorage.getItem('score')}`;
+    document.getElementById("gameEnd").style.zIndex="2";  // Shows end screen
+    document.getElementById("game").style.zIndex="1";
+}
 
  /**
- * Timer function
+ * Timer countdown
  */
 function gameCountdown(){
     let timeLeft = parseInt(document.getElementById("timer").value) - 1;
     document.getElementById("timer").value = timeLeft;
     switch(timeLeft){
-        case 0:
+        case 0:     // Ends game when timer is 0            
             clearInterval(idInterval);
-            // End game
-            const cards = document.getElementsByClassName('card');
+            let cards = document.getElementsByClassName('card');
             for (let card of cards) {
                 card.removeEventListener('click',flipCard);
             }
-            window.alert("Has perdido!!!");
-            //Cambiar z-index paneles
-            /*document.getElementById("juegoAcabado").classList.add('juegoAcabadoColor');
-            document.getElementById("juegoAcabado").style.zIndex="2";
-            document.getElementById("juego").style.zIndex="1";
-            document.getElementById("nuevaPartida").addEventListener("click",(e)=>location.reload());*/
+            showEndScreen(false);    
+            sessionStorage.setItem('score',0);        
             break;
-        case 10:
+        case 10:    // When timer is 10s box gets red as a warning
             document.getElementById("timer").style.backgroundColor = "red";
             document.getElementById("timer").style.color = "white";
             break;
@@ -71,7 +78,7 @@ function setHeaderInfo(){
     document.getElementById("avatarImg").src = avatarImg;
     document.getElementById("level").value = level;
     document.getElementById("pairsLeft").value = parseInt(cards) / 2;
-    document.getElementById("timer").value = parseInt(cards) * 2,5;   // Timer depends on number of cards
+    document.getElementById("timer").value = parseInt(cards) * 2.5;   // Timer depends on number of cards
 }
 
 /**
@@ -141,8 +148,15 @@ function flipCard(event){
                 firstCard.removeEventListener('click',flipCard);    // The matching cards are not clickable anymore
                 secondCard.removeEventListener('click',flipCard);
                 document.getElementById("pairsLeft").value = document.getElementById("pairsLeft").value - 1;
-                if(document.getElementById("pairsLeft").value == 0){    // If all cards are matched, user wins
-                    window.alert("HAS GANADO!!!!");
+                if(document.getElementById("pairsLeft").value == 0){    // If all cards are matched, end game
+                    // End game
+                    clearInterval(idInterval);
+                    let cards = document.getElementsByClassName('card');
+                    for (let card of cards) {
+                        card.removeEventListener('click',flipCard);
+                    }
+                    sessionStorage.setItem('score',parseInt(sessionStorage.getItem('score')) + 1);  // If user wins sums 1 to the score
+                    showEndScreen(true);                     
                 }
             }
             else{
@@ -163,15 +177,11 @@ function startGame(){
     }
 }
 
-/*
-* MAIN
+/**
+* Main
 */
-
-// Get user data
-getUserData();
-
-// Check user data
-if(!checkUserData()) location="index.html";
+getUserData();      // Get user data
+if(!checkUserData()) location="index.html";     // Check user data
 
 // Start game
 setHeaderInfo();

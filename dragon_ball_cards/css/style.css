@@ -88,7 +88,8 @@ p{
     font-weight: 100;
     font-size: 14px;
 }
-/*Clases*/
+
+/* Clases and IDs*/
 .itemForm{
     margin-bottom: 20px;
 }
@@ -108,7 +109,6 @@ p{
 .avatarItem img{
     width: 55px;
 }
-/*IDs*/
 #form-fields{
     padding-left: 25px;
 }
@@ -124,8 +124,7 @@ p{
     text-align: center;
     color:#fd0c49;
     font-weight: 300;
-    font-size: 14px;
-    margin-top: 10px;
+    font-size: 12px;
     margin-bottom: 10px;
 }
 #avatar{

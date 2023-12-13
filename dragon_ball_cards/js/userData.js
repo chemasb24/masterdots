@@ -15,9 +15,10 @@ function saveUserData(nick, level, cards, avatarCont) {
     sessionStorage.setItem('level',level.value);
     sessionStorage.setItem('cards',cards.value);
     sessionStorage.setItem('avatarImg',avatarCont.src);
+    sessionStorage.setItem('score',0);
 }
 /**
- * Recoge los daots de la sesion del sessionStage
+ * Gets sessionStorage data
  */
 function getUserData(){
     nick = sessionStorage.getItem('nick');
@@ -27,7 +28,7 @@ function getUserData(){
 }
 
 /**
- * Comprueba si existe nick en el sessionStorage
+ * Checks nick in sessionStorage
  */
 function checkUserData(){
     if(nick==null){
